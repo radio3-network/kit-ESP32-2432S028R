@@ -1,0 +1,168 @@
+ESP32 development board, standard 2.8-inch TFT screen and resistor TP, support one-key automatic download, provide LVGL demo and arduino examples
+
+
+
+Purchase page:
+https://www.aliexpress.com/item/1005004913471113.html
+
+Download link:
+http://www.jczn1688.com/zlxz
+
+Alternative download link:
+https://web.archive.org/web/20221208020512/http://www.jczn1688.com/zlxz
+
+Password:
+jczn1688
+
+
+Other resources:
+https://github.com/OttoMeister/ARDUINO_ESP32-2432S028R
+https://macsbug.wordpress.com/2022/08/17/esp32-2432s028/
+https://github.com/markr1961/ESP32MeterClock
+https://www.reddit.com/r/esp32/comments/ws6n4u/unknown_schematic_for_esp322432s028_board_anyone/
+
+Running OpenHASP:
+https://twitter.com/alfonsoem/status/1569048874744168449
+
+
+----------------------
+
++ Display Library is running on LovyanGFX (ILI9341 SPI2_HOST).
+++ https://github.com/lovyan03/LovyanGFX
+
++ Touch screen support
+++ "UPDATE:The problem was me not opening the VSPI bus for the touch screen."
+++ https://www.reddit.com/r/esp32/comments/ws6n4u/comment/il44wvt
+
+
+TFT:
+
+#define ILI9341_2_DRIVER // Alternative ILI9341 driver, see https://github.com/Bodmer/TFT_eSPI/issues/1172
+
+#define TFT_WIDTH 240
+
+#define TFT_HEIGHT 320
+
+#define TFT_BL 21 // LED back-light control pin
+
+#define TFT_BACKLIGHT_ON HIGH // Level to turn ON back-light (HIGH or LOW)
+
+#define TFT_MOSI 13 // In some display driver board, it might be written as "SDA" and so on.
+
+#define TFT_SCLK 14
+
+#define TFT_CS 15 // Chip select control pin
+
+#define TFT_DC 2 // Data Command control pin
+
+#define TFT_RST 12 // Reset pin (could connect to Arduino RESET pin)
+
+#define TFT_BL 21 // LED back-light
+
+#define SPI_FREQUENCY 55000000 // STM32 SPI1 only (SPI2 maximum is 27MHz)
+
+// Optional reduced SPI frequency for reading TFT
+
+#define SPI_READ_FREQUENCY 20000000
+
+
+
+Touch Screen:
+
+#define XPT2046_IRQ 36
+
+#define XPT2046_MOSI 32
+
+#define XPT2046_MISO 39
+
+#define XPT2046_CLK 25
+
+#define XPT2046_CS 33
+
+// The XPT2046 requires a lower SPI clock rate of 2.5MHz so we define that here:
+
+#define SPI_TOUCH_FREQUENCY 2500000
+
+
+
+USB TO TTL:
+
+CH340C
+
+Auto Reset circuit RTS + DTR
+
+
+
+Audio (SPEAK):
+
+DAC 2 (GPIO 26) -> SC8002B (Audio Amplifier) -> 2 Pins (Speak)
+
+
+
+Light sensor (GT36516) via ADC:
+
+https://datasheet.lcsc.com/lcsc/2110150930_JCHL-Shenzhen-Jing-Chuang-He-Li-Tech-GT36516_C2904880.pdf
+
+GT36516 -> IO34
+
+
+
+RGB LED (Digital pins):
+
+IO 17 - Red
+
+IO 4 - Green
+
+IO 16 - BBlue
+
+Flash (PSRAM) 4 MByte (32 Mbit) Serial Flash
+
+W25QR32
+
+
+
+SD CARD READER:
+
+IO 5 - CS
+
+IO 23 - MOSI
+
+IO 18 - CLK
+
+IO 19 - MISO
+
+
+
+Power Supply base Port 1
+
+1 - VIN
+
+2 - U0TXD
+
+3 - U0RXD
+
+4 - GND
+
+
+
+Temperature and Humidity Interface:
+
+1 - 3.3V
+
+2- IO27 (Pull Up 10K - 3.3V)
+
+3 - NOT CONNECTED
+
+4 - GND
+
+
+
+4P 1.25 Port 3:
+
+1 - IO 21
+
+2 - IO 22
+
+3 - IO 35
+
+4 - GND
