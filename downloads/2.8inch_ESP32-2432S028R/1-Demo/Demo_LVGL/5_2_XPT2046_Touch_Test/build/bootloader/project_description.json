@@ -1,0 +1,20 @@
+{
+    "project_name":       "bootloader",
+    "project_path":       "D:/esp-idf/components/bootloader/subproject",
+    "build_dir":          "D:/esp-idf/examples/get-started/5_2_XPT2046_Touch_Test/build/bootloader",
+    "config_file":        "D:/esp-idf/examples/get-started/5_2_XPT2046_Touch_Test/sdkconfig",
+    "config_defaults":    "",
+    "app_elf":            "bootloader.elf",
+    "app_bin":            "bootloader.bin",
+    "git_revision":       "v4.3",
+    "target":             "esp32",
+    "phy_data_partition": "",
+    "monitor_baud" :      "115200",
+    "monitor_toolprefix": "xtensa-esp32-elf-",
+    "config_environment" : {
+        "COMPONENT_KCONFIGS" : "D:/esp-idf/components/efuse/Kconfig;D:/esp-idf/components/esp32/Kconfig;D:/esp-idf/components/esp_common/Kconfig;D:/esp-idf/components/esp_system/Kconfig;D:/esp-idf/components/log/Kconfig;D:/esp-idf/components/newlib/Kconfig;D:/esp-idf/components/spi_flash/Kconfig",
+        "COMPONENT_KCONFIGS_PROJBUILD" : "D:/esp-idf/components/bootloader/Kconfig.projbuild;D:/esp-idf/components/esptool_py/Kconfig.projbuild;D:/esp-idf/components/partition_table/Kconfig.projbuild"
+    },
+    "build_components" : [ "bootloader", "bootloader_support", "efuse", "esp32", "esp_common", "esp_hw_support", "esp_rom", "esp_system", "esptool_py", "hal", "log", "main", "micro-ecc", "newlib", "partition_table", "soc", "spi_flash", "xtensa", "" ],
+    "build_component_paths" : [ "D:/esp-idf/components/bootloader", "D:/esp-idf/components/bootloader_support", "D:/esp-idf/components/efuse", "D:/esp-idf/components/esp32", "D:/esp-idf/components/esp_common", "D:/esp-idf/components/esp_hw_support", "D:/esp-idf/components/esp_rom", "D:/esp-idf/components/esp_system", "D:/esp-idf/components/esptool_py", "D:/esp-idf/components/hal", "D:/esp-idf/components/log", "D:/esp-idf/components/bootloader/subproject/main", "D:/esp-idf/components/bootloader/subproject/components/micro-ecc", "D:/esp-idf/components/newlib", "D:/esp-idf/components/partition_table", "D:/esp-idf/components/soc", "D:/esp-idf/components/spi_flash", "D:/esp-idf/components/xtensa", "" ]
+}

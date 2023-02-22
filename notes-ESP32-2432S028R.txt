@@ -1,5 +1,10 @@
 ESP32 development board, standard 2.8-inch TFT screen and resistor TP, support one-key automatic download, provide LVGL demo and arduino examples
 
+CPU type:
+ESP WROOM32
+
+Model: ESP-2432S028
+
 
 
 Purchase page:
@@ -18,6 +23,7 @@ jczn1688
 Other resources:
 https://github.com/OttoMeister/ARDUINO_ESP32-2432S028R
 https://macsbug.wordpress.com/2022/08/17/esp32-2432s028/
+https://macsbug.wordpress.com/2022/08/20/web-radio-esp32-2432s028-i2s/
 https://github.com/markr1961/ESP32MeterClock
 https://www.reddit.com/r/esp32/comments/ws6n4u/unknown_schematic_for_esp322432s028_board_anyone/
 
@@ -166,3 +172,13 @@ Temperature and Humidity Interface:
 3 - IO 35
 
 4 - GND
+
+
+
+
+//// Eclipse IDE
+
+Expressif plugin
+https://dl.espressif.com/dl/idf-eclipse-plugin/updates/latest/
+
+
