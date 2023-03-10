@@ -1,0 +1,147 @@
+# Apache nuttx
+
+## Tutorials
++ https://nuttx.apache.org/docs/latest/quickstart/install.html
++ https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/linux-macos-setup.html
++ https://www.youtube.com/watch?v=eXl-A42pJZs
++ code snippets: https://pastebin.com/hQ3djZir
++ https://github.com/espressif/idf-eclipse-plugin/blob/master/docs/Espressif-IDE.md
+
+
+## Key people
++ https://github.com/lupyuen
+
+
+
+
+# Install ubuntu on virtual machine
++ unattended install
+++ username: radio3
+++ password: 123456
+
++ include on sudoers: visudo -f /etc/sudoers
+++ radio3 ALL=(ALL) ALL
+
++ install system dependencies
+sudo apt update
+sudo apt install openjdk-19-jre-headless git bison flex gettext texinfo libncurses5-dev libncursesw5-dev xxd gperf automake libtool pkg-config build-essential gperf genromfs libgmp-dev libmpc-dev libmpfr-dev libisl-dev binutils-dev libelf-dev libexpat-dev gcc-multilib g++-multilib picocom u-boot-tools util-linux libffi-dev libssl-dev dfu-util ninja-build python3-venv ccache libusb-dev pkg-config kconfig-frontends minicom ccache
+
++ install espressif IDE
+++ https://github.com/espressif/idf-eclipse-plugin/blob/master/docs/Espressif-IDE.md
++ install tools from the Eclipse IDE
+++ download version 4.4.3 because version 5.x has syntax errors
+++ "Install aditional tools" dialog gets hidden
+++ Need to look underneath the main IDE window to progress
++ manually copy rules file
+sudo cp /home/radio3/.espressif/tools/openocd-esp32/v0.11.0-esp32-20221026/openocd-esp32/bin/../share/openocd/contrib/60-openocd.rules /etc/udev/rules.d/60-openocd.rules
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Install Ubuntu tools
+´´´
+sudo apt update
+sudo apt upgrade
+sudo apt-get install automake bison build-essential flex gperf git libncurses5-dev libtool libusb-dev libusb-1.0.0-dev pkg-config kconfig-frontends minicom ccache
+´´´
+
+´´´
+sudo apt install bison flex gettext texinfo libncurses5-dev libncursesw5-dev xxd gperf automake libtool pkg-config build-essential gperf genromfs libgmp-dev libmpc-dev libmpfr-dev libisl-dev binutils-dev libelf-dev libexpat-dev gcc-multilib g++-multilib picocom u-boot-tools util-linux libffi-dev libssl-dev dfu-util ninja-build python3-venv ccache libusb-dev pkg-config kconfig-frontends minicom ccache
+
+´´´
+
+
+
+## Install compiler
+
+
+curl https://dl.espressif.com/dl/xtensa-esp32-elf-linux64-1.22.0-97-gc752ad5-5.2.0.tar.gz | tar -xz
+
+
+
+´´´
+curl https://dl.espressif.com/dl/xtensa-esp32-elf-gcc8_2_0-esp-2020r2-linux-amd64.tar.gz | tar -xz
+
+sudo mkdir /opt/xtensa
+
+sudo mv xtensa-esp32-elf/ /opt/xtensa/
+
+export PATH=$PATH:/opt/xtensa/xtensa-esp32-elf/bin
+´´´
+
++ Edit ~/.bashrc to include the export line
+
+
+## Download boot loader
+
+´´´
+mkdir ./esp-bins
+curl -L "https://github.com/espressif/esp-nuttx-bootloader/releases/download/latest/bootloader-esp32.bin" -o ./esp-bins/bootloader-esp32.bin
+
+curl -L "https://github.com/espressif/esp-nuttx-bootloader/releases/download/latest/partition-table-esp32.bin" -o ./esp-bins/partition-table-esp32.bin
+´´´
+
+
+## Install esptool
+´´´
+pip3 install esptool
+
+sudo cp ~/.local/bin/esptool.py /usr/local/bin/
+
+sudo chmod 755 /usr/local/bin/esptool.py
+´´´
+
++ Add your username to the dial group
+
+´´´
+newgrp dialout
+sudo adduser <username> dialout
+´´´
+
+
+# Compile and run NuttX for the first time
+
+´´´
+cd nuttx
+
+./tools/configure.sh esp32-devkitc:nsh
+
+make download ESPTOOL_PORT=/dev/ttyUSB0 ESPTOOL_BINDIR=../esp-bins
+´´´
+
+To read the serial line:
+´´´
+    sudo minicom -s
+´´´
+
+In alternative:
+´´´
+sudo screen /dev/ttyUSB0 115200
+´´´
+
+
+## Configure
+
+To add libraries:
+´´´
+make menuconfig
+´´´
+
++ Save the .config file often to another location
++ Test new configurations with "make" to verify they work
+

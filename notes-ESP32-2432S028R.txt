@@ -21,11 +21,20 @@ jczn1688
 
 
 Other resources:
-https://github.com/OttoMeister/ARDUINO_ESP32-2432S028R
-https://macsbug.wordpress.com/2022/08/17/esp32-2432s028/
-https://macsbug.wordpress.com/2022/08/20/web-radio-esp32-2432s028-i2s/
-https://github.com/markr1961/ESP32MeterClock
-https://www.reddit.com/r/esp32/comments/ws6n4u/unknown_schematic_for_esp322432s028_board_anyone/
++ https://github.com/OttoMeister/ARDUINO_ESP32-2432S028R
++ https://github.com/rzeldent/esp32-smartdisplay
++ https://macsbug.wordpress.com/2022/08/17/esp32-2432s028/
++ https://macsbug.wordpress.com/2022/08/20/web-radio-esp32-2432s028-i2s/
++ https://github.com/markr1961/ESP32MeterClock
++ https://www.reddit.com/r/esp32/comments/ws6n4u/unknown_schematic_for_esp322432s028_board_anyone/
+
+LovyanGFX + LVGL + Touch
++ https://www.youtube.com/watch?v=IPCvQ4o_WP8
++ https://github.com/0015/ThatProject/tree/master/ESP32_LVGL/LVGL8/0_ILI9488_LovyanGFX
+
+### Calibration values for LovyanGFX touchscreen
++ 3749, 3619, 3737, 207, 361, 3595, 267, 221
+
 
 Running OpenHASP:
 https://twitter.com/alfonsoem/status/1569048874744168449
@@ -39,6 +48,62 @@ https://twitter.com/alfonsoem/status/1569048874744168449
 + Touch screen support
 ++ "UPDATE:The problem was me not opening the VSPI bus for the touch screen."
 ++ https://www.reddit.com/r/esp32/comments/ws6n4u/comment/il44wvt
+
+
+
+
+# Installing Arduino (linux/ubuntu)
+
++ Download from https://www.arduino.cc/en/software
++ Install the Linux version
++ After running, click on "Preferences" -> "Additional board URLs"
++ include https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
++ Select the "ESP32 Dev Module" as generic ESP32 board
+
+# Coding
+
+Example of graphic writing
+https://simple-circuit.com/interfacing-arduino-ili9341-tft-display/
+
+Install Adafruit_ILI9341 (this installs all dependencies)
+
+
+## LVGL
++ Install LVGL library on Arduino
++ Follow instructions on https://docs.lvgl.io/latest/en/html/get-started/arduino.html
+
+
+
+# Hardware pins
+
+## RGB LED (Digital pins):
+
++ Pin 4: red led
++ Pin 17: blue led
++ Pin 16: green led
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 TFT:
@@ -180,5 +245,7 @@ Temperature and Humidity Interface:
 
 Expressif plugin
 https://dl.espressif.com/dl/idf-eclipse-plugin/updates/latest/
+
+
 
 
