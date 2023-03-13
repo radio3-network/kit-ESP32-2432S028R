@@ -1,0 +1,31 @@
+{
+    "files.associations": {
+		"array": "c",
+		"vector": "c",
+		"xstring": "c",
+		"xutility": "c",
+		"random": "c",
+		"*.ipp": "c",
+		"cstddef": "cpp",
+		"fstream": "cpp",
+		"functional": "cpp",
+		"limits": "cpp",
+		"map": "cpp",
+		"memory": "cpp",
+		"mutex": "cpp",
+		"system_error": "cpp",
+		"unordered_map": "cpp",
+		"xhash": "cpp",
+		"xiosbase": "cpp",
+		"xlocale": "cpp",
+		"xtree": "cpp",
+		"ratio": "c",
+		"esp_event.h": "c",
+		"freertos.h": "c"
+	},
+	"editor.insertSpaces": false,      //不检测到第一个是tab后面都用tab
+	"editor.detectIndentation": false,      //不检测到第一个是tab后面都用tab
+	"editor.renderControlCharacters": true, //显示制表符是→
+	"editor.renderWhitespace": "all",       //显示4个空格是....
+	"editor.tabSize": 4,                    //tab设置为4个空格
+}
